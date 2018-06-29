@@ -1,0 +1,3 @@
+module Application {
+    requires Algorithms;
+}

@@ -1,10 +1,12 @@
 package application;
 
-import Levenstein.LevensteinDistance;
+import EA.Creature;
 
 public class Application {
     public static void main(String[] args) {
-        LevensteinDistance levensteinDistance = LevensteinDistance.build(new StringBuffer("sitting"), new StringBuffer("kitten"));
-        System.out.print(levensteinDistance.initialize());
+        String rangeCharacter = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ" + "aąbcćdeęfghijklłmnńoóprsśtuwyzźż" + " ";
+        String finalInscription = "Hello World";
+        Creature creature = Creature.initialize(rangeCharacter, finalInscription);
+        creature.createGenesList();
     }
 }

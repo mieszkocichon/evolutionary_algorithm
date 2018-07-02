@@ -7,7 +7,7 @@ public class LevensteinDistance {
     private CharSequence destinationInscription;
     private CharSequence primitiveInscription;
 
-    private LevensteinDistance(CharSequence destinationInscription, CharSequence primitiveInscription) {
+    public LevensteinDistance(CharSequence destinationInscription, CharSequence primitiveInscription) {
         this.destinationInscription = destinationInscription;
         this.primitiveInscription = primitiveInscription;
     }

@@ -15,23 +15,33 @@ public class Genes {
         this.gen = gen;
     }
 
-    public static Genes initialize(List<List<String>> gen, int finalInscriptionLenght, String rangeCharacter) {
+    List<List<String>> getGen() {
+        return gen;
+    }
+
+    static Genes initialize(List<List<String>> gen, int finalInscriptionLenght, String rangeCharacter) {
         return new Genes(rangeCharacter, finalInscriptionLenght, gen);
     }
 
-    public void build() {
+    void build() {
         this.rangeCharacter.chars().forEach((microb) -> {
             List<String> micr = new LinkedList<>();
-            micr.add(this.rangeCharacter.charAt(new Random().nextInt(this.finalInscriptionLenght)) + "");
-            micr.add(this.rangeCharacter.charAt(new Random().nextInt(this.finalInscriptionLenght)) + "");
-            micr.add(this.rangeCharacter.charAt(new Random().nextInt(this.finalInscriptionLenght)) + "");
-            micr.add(this.rangeCharacter.charAt(new Random().nextInt(this.finalInscriptionLenght)) + "");
-            micr.add(this.rangeCharacter.charAt(new Random().nextInt(this.finalInscriptionLenght)) + "");
-            micr.add(this.rangeCharacter.charAt(new Random().nextInt(this.finalInscriptionLenght)) + "");
+            micr.add(generateMicrob());
+            micr.add(generateMicrob());
+            micr.add(generateMicrob());
+            micr.add(generateMicrob());
+            micr.add(generateMicrob());
+            micr.add(generateMicrob());
 
             gen.add(micr);
         });
+    }
 
-        System.out.print("");
+    private String generateMicrob() {
+        return this.rangeCharacter.charAt(randomValue()) + "";
+    }
+
+    private int randomValue() {
+        return new Random().nextInt(this.finalInscriptionLenght);
     }
 }
